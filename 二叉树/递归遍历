@@ -1,6 +1,6 @@
 
 /*
-leetcode144 二叉树前序遍历
+leetcode144 二叉树递归遍历
  * Definition for a binary tree node.
  * struct TreeNode {
  *     int val;
@@ -19,6 +19,17 @@ public:
         vec.push_back(cur->val);                      //前序遍历，中左右
         traversal(cur->left, vec);
         traversal(cur->right, vec);
+        
+        /*中序遍历，左中右
+        traversal(cur->left, vec);
+        vec.push_back(cur->val); 
+        traversal(cur->right, vec);
+        */
+        /*后序遍历，左右后
+        traversal(cur->left, vec);
+        traversal(cur->right, vec);
+        vec.push_back(cur->val); 
+        */
     }
     vector<int> preorderTraversal(TreeNode* root) {
         vector<int> result;
